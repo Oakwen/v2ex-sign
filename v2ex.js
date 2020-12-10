@@ -220,9 +220,9 @@ function sign() {
 
                         //如果签到失败
 
-                        // await check();
+                        await check();
 
-                        // await daily();
+                        await daily();
 
                     }
 
@@ -231,8 +231,6 @@ function sign() {
                 await balance();
 
             } else { }
-
-
 
             console.log(notice);
 
@@ -254,7 +252,7 @@ function sign() {
 
             );
 
-            await send_wechat(notice)
+            await send_wechat(notice);
 
         } catch (err) {
 
