@@ -220,9 +220,9 @@ function sign() {
 
                         //如果签到失败
 
-                        await check();
+                        // await check();
 
-                        await daily();
+                        // await daily();
 
                     }
 
