@@ -1,0 +1,22 @@
+{
+  "name": "v2ex-sign",
+  "version": "1.0.0",
+  "description": "v2ex 自动签到",
+  "main": "v2ex.js",
+  "license": "UNLICENSED",
+  "author": {
+    "name": "Oakwen"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "updates": "",
+  "contributes": {
+    "search": null
+  },
+  "homepage": "",
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
+}

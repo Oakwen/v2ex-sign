@@ -1,0 +1,36 @@
+#参照ruicky/jd_sign_bot
+
+name: Github v2ex-sign
+
+on:
+  watch:
+    types: started
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: "15 0 * * *"
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+
+    steps:
+      - name: Checkout codes
+        uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+      - name: Run
+        run: npm install
+      - run: node v2ex.js
+        env:
+          V2EXCK: ${{ secrets.V2EXCK }}
+          MESSAGER_URL: ${{ secrets.MESSAGER_URL }}
+      - name: Upload to this repo
+        run: |
+          git config --global user.name "Oakwen"
+          git config --global user.email "dai.tianwen@gmail.com" 
+          git add . 
+          git commit -m 'upload 签到结果'  
+          git push -u origin master
